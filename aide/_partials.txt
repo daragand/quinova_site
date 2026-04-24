@@ -1,0 +1,2 @@
+<!-- Quinova — reusable header/footer HTML snippets, copy-pasted into each page since we're plain HTML -->
+<!-- This file is documentation only; actual markup is inlined per page. -->

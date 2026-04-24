@@ -1,0 +1,51 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Mes droits RGPD — Quinova</title><link rel="stylesheet" href="shared.css"><style>
+.rights{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0 30px}
+.right{background:#fff;border:1.5px solid var(--q-border);border-radius:16px;padding:20px}
+.right h3{font-size:16px;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.right h3 .ic{width:28px;height:28px;border-radius:9px;background:var(--q-blue-l);color:var(--q-blue-d);display:flex;align-items:center;justify-content:center;font-family:var(--q-font-d);font-weight:900;font-size:13px}
+.right p{font-size:13.5px;line-height:1.55;margin:0}
+@media(max-width:700px){.rights{grid-template-columns:1fr}}
+.form{background:var(--q-bg-2);border-radius:18px;padding:30px;max-width:720px;border:1.5px solid var(--q-border)}
+.form label{display:block;font-family:var(--q-font-d);font-weight:700;font-size:13px;margin-bottom:6px;color:var(--q-navy)}
+.form input,.form select,.form textarea{width:100%;font-family:var(--q-font-b);font-size:14px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--q-border);background:#fff;margin-bottom:14px;color:var(--q-navy)}
+.form textarea{min-height:110px;resize:vertical}
+.form input:focus,.form select:focus,.form textarea:focus{outline:none;border-color:var(--q-blue);box-shadow:0 0 0 4px rgba(74,144,184,0.22)}
+</style></head><body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="logo on-light" style="font-size:28px">QUIN<span class="dot">O</span>VA</a><div class="nav-links"><a href="index.html#fonctionnalites">Fonctionnalités</a><a href="index.html#soutenir">Soutenir</a><a href="plan-du-site.html">Plan du site</a></div><div class="nav-cta"><a href="https://app.quinova.fr" class="btn btn-p btn-sm">Lancer un loto</a></div></div></nav>
+
+<main class="page">
+  <div class="eyebrow">RGPD</div>
+  <h1>Mes droits sur mes données</h1>
+  <p style="margin-top:10px">Conformément au RGPD, vous disposez de droits étendus sur vos données personnelles. Voici ce que Quinova vous garantit et comment les exercer.</p>
+
+  <h2>Vos 6 droits</h2>
+  <div class="rights">
+    <div class="right"><h3><span class="ic">1</span>Droit d'accès</h3><p>Obtenir la copie intégrale des données qui vous concernent, dans un format lisible.</p></div>
+    <div class="right"><h3><span class="ic">2</span>Droit de rectification</h3><p>Corriger toute information inexacte ou incomplète vous concernant.</p></div>
+    <div class="right"><h3><span class="ic">3</span>Droit à l'effacement</h3><p>Demander la suppression de votre compte et de vos données (« droit à l'oubli »).</p></div>
+    <div class="right"><h3><span class="ic">4</span>Droit à la portabilité</h3><p>Récupérer vos données dans un format structuré (JSON / CSV) pour les réutiliser ailleurs.</p></div>
+    <div class="right"><h3><span class="ic">5</span>Droit à la limitation</h3><p>Demander la suspension temporaire du traitement de vos données.</p></div>
+    <div class="right"><h3><span class="ic">6</span>Droit d'opposition</h3><p>Vous opposer, pour motif légitime, à un traitement vous concernant.</p></div>
+  </div>
+
+  <h2>Exercer un droit</h2>
+  <p>Deux options&nbsp;: depuis votre compte (<a href="https://app.quinova.fr">Mon compte → Mes données RGPD</a>), ou via le formulaire ci-dessous. Réponse garantie sous <b>30 jours</b>.</p>
+
+  <form class="form" onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:30px 0&quot;><div style=&quot;font-size:44px&quot;>✓</div><h3>Demande envoyée</h3><p style=&quot;color:var(--q-fg-2);margin-top:6px&quot;>Notre DPO vous recontacte sous 30 jours.</p></div>'">
+    <label>Droit à exercer</label>
+    <select><option>Accès à mes données</option><option>Rectification</option><option>Effacement / suppression de compte</option><option>Portabilité</option><option>Limitation</option><option>Opposition</option></select>
+    <label>Votre e-mail (identifiant du compte)</label>
+    <input type="email" placeholder="vous@exemple.fr" required>
+    <label>Précisions (facultatif)</label>
+    <textarea placeholder="Détaillez votre demande si besoin…"></textarea>
+    <button class="btn btn-p">Envoyer ma demande</button>
+  </form>
+
+  <h2 style="margin-top:40px">Réclamation auprès de la CNIL</h2>
+  <p>Si vous estimez que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la <a href="https://www.cnil.fr/fr/plaintes" target="_blank" rel="noopener">CNIL</a>.</p>
+
+  <p style="margin-top:30px;font-size:13px;color:var(--q-fg-3)">DPO&nbsp;: <a href="mailto:dpo@quinova.fr">dpo@quinova.fr</a> · Dernière mise à jour&nbsp;: avril 2026.</p>
+</main>
+
+<footer class="footer"><div class="footer-inner"><div><div class="logo on-dark" style="font-size:30px;margin-bottom:12px">QUIN<span class="dot">O</span>VA</div></div><div><h4>Produit</h4><ul><li><a href="index.html#fonctionnalites">Fonctionnalités</a></li></ul></div><div><h4>Soutenir</h4><ul><li><a href="index.html#soutenir">Faire un don</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgu.html">CGU</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="cookies.html">Cookies</a></li><li><a href="rgpd.html">RGPD</a></li></ul></div><div><h4>Site</h4><ul><li><a href="plan-du-site.html">Plan du site</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="footer-bottom"><div>© 2025 Quinova</div><div>quinova.fr</div></div></footer>
+</body></html>

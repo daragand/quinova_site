@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quineo — Bleu Ciel Doux</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --primary:#4A90B8;
+    --primary-light:#E5F3FA;
+    --primary-mid:#78AED0;
+    --primary-dark:#2F72A0;
+    --secondary:#FFD84D;
+    --secondary-light:#FFF7D6;
+    --accent:#2BBFA4;
+    --accent-light:#D8F6F1;
+    --warm:#F97B4B;
+    --text:#0D1E2C;
+    --text-muted:#4A6880;
+    --text-soft:#9AB5C8;
+    --border:#C8DFF0;
+    --bg:#FFFFFF;
+    --bg2:#F4FAFD;
+    --font:'Nunito',sans-serif;
+    --fontb:'Nunito Sans',sans-serif;
+  }
+  body{font-family:var(--fontb);background:var(--bg);color:var(--text);line-height:1.6}
+
+  .hero{background:var(--bg);padding:72px 60px 56px;border-bottom:2px solid var(--border);display:flex;align-items:center;justify-content:space-between;gap:40px;flex-wrap:wrap}
+  .brand-tag{display:inline-block;background:var(--primary-light);color:var(--primary-dark);font-family:var(--font);font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:6px 14px;border-radius:30px;margin-bottom:28px}
+  .logo-display{font-family:var(--font);font-size:80px;font-weight:900;line-height:1;color:var(--primary);letter-spacing:-2px;margin-bottom:8px}
+  .logo-display span{color:var(--secondary)}
+  .logo-tagline{font-family:var(--font);font-size:17px;font-weight:600;color:var(--text-muted);margin-bottom:28px}
+  .hero-desc{font-size:15px;color:var(--text-muted);max-width:420px;line-height:1.8}
+  .hero-right{display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+  .logo-card{border-radius:24px;padding:28px 36px;display:flex;align-items:center;justify-content:center}
+  .logo-card-text{font-family:var(--font);font-size:48px;font-weight:900;letter-spacing:-1px}
+
+  .section{padding:60px;border-bottom:2px solid var(--border)}
+  .section:nth-child(odd){background:var(--bg)}
+  .section:nth-child(even){background:var(--bg2)}
+  .section-label{font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--text-soft);margin-bottom:10px}
+  .section-title{font-family:var(--font);font-size:30px;font-weight:800;color:var(--text);margin-bottom:36px}
+
+  .palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:20px}
+  .swatch{border-radius:18px;overflow:hidden;border:1.5px solid var(--border)}
+  .swatch-color{height:100px}
+  .swatch-info{background:var(--bg);padding:14px 16px}
+  .swatch-name{font-family:var(--font);font-size:13px;font-weight:800;color:var(--text);margin-bottom:3px}
+  .swatch-role{font-size:11px;color:var(--text-muted);margin-bottom:6px}
+  .swatch-hex{font-family:'Courier New',monospace;font-size:12px;color:var(--text-soft);font-weight:600}
+
+  .typo-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .typo-card{background:var(--bg2);border-radius:18px;padding:30px;border:1.5px solid var(--border)}
+  .typo-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:18px}
+  .h1{font-family:var(--font);font-size:52px;font-weight:900;color:var(--text);line-height:1.1;margin-bottom:8px}
+  .h2{font-family:var(--font);font-size:34px;font-weight:800;color:var(--text);line-height:1.2;margin-bottom:8px}
+  .h3{font-family:var(--font);font-size:22px;font-weight:700;color:var(--text);line-height:1.3;margin-bottom:8px}
+  .body-txt{font-family:var(--fontb);font-size:15px;color:var(--text-muted);line-height:1.8;margin-bottom:8px}
+  .typo-spec{font-size:11px;color:var(--text-soft)}
+  .alpha{font-family:var(--font);font-size:26px;font-weight:800;color:var(--primary);letter-spacing:3px;line-height:1.7;margin:18px 0}
+  .font-badge{display:inline-flex;align-items:center;background:var(--primary-light);color:var(--primary-dark);font-family:var(--font);font-size:13px;font-weight:800;padding:6px 16px;border-radius:30px;margin-bottom:14px}
+
+  .comp-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+  .comp-card{background:var(--bg2);border-radius:18px;padding:28px;border:1.5px solid var(--border)}
+  .comp-title{font-family:var(--font);font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--text-soft);margin-bottom:20px}
+
+  .btn{font-family:var(--font);font-weight:800;font-size:15px;border:none;cursor:pointer;border-radius:50px;padding:12px 26px;display:inline-block}
+  .btn-group{display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .btn-p{background:var(--primary);color:white}
+  .btn-s{background:var(--secondary);color:#7A5000}
+  .btn-o{background:transparent;color:var(--primary);border:2.5px solid var(--primary)}
+  .btn-a{background:var(--accent);color:white}
+  .btn-g{background:var(--primary-light);color:var(--primary-dark)}
+  .btn-w{background:var(--warm);color:white}
+  .btn-sm{font-size:13px;padding:8px 18px}
+
+  .badge-group{display:flex;flex-wrap:wrap;gap:10px}
+  .badge{font-family:var(--font);font-size:12px;font-weight:800;border-radius:30px;padding:5px 13px;display:inline-block}
+  .b1{background:var(--primary-light);color:var(--primary-dark)}
+  .b2{background:var(--secondary-light);color:#7A5000}
+  .b3{background:var(--accent-light);color:#0F6E56}
+  .b4{background:#FFF0EA;color:#B84000}
+  .b5{background:#F0F0F0;color:#555}
+
+  .event-card{background:var(--bg);border-radius:20px;overflow:hidden;border:1.5px solid var(--border)}
+  .event-header{background:var(--primary);padding:22px 24px 18px;position:relative}
+  .event-header::before{content:"🎱";font-size:38px;position:absolute;right:18px;top:50%;transform:translateY(-50%);opacity:0.2}
+  .event-date{font-family:var(--font);font-size:12px;font-weight:700;color:rgba(255,255,255,0.75);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:6px}
+  .event-title{font-family:var(--font);font-size:22px;font-weight:900;color:white;line-height:1.2}
+  .event-body{padding:18px 24px 22px}
+  .event-meta{display:flex;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+  .meta-item{font-family:var(--font);font-size:13px;font-weight:600;color:var(--text-muted);display:flex;align-items:center;gap:6px}
+  .meta-icon{width:20px;height:20px;background:var(--primary-light);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px}
+  .price-row{display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border-radius:14px;padding:12px 16px}
+  .price-lbl{font-family:var(--font);font-size:13px;font-weight:700;color:var(--text-muted)}
+  .price-val{font-family:var(--font);font-size:22px;font-weight:900;color:var(--primary)}
+
+  .ticket{background:var(--bg);border-radius:18px;border:1.5px solid var(--border);overflow:hidden}
+  .ticket-top{background:var(--secondary);padding:16px 20px;display:flex;justify-content:space-between;align-items:center}
+  .ticket-title{font-family:var(--font);font-size:16px;font-weight:900;color:#5C3A00}
+  .ticket-num{font-family:var(--font);font-size:28px;font-weight:900;color:#5C3A00}
+  .ticket-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;padding:16px}
+  .cell{aspect-ratio:1;border-radius:10px;display:flex;align-items:center;justify-content:center;font-family:var(--font);font-size:16px;font-weight:800;background:var(--bg2);color:var(--text);border:1.5px solid var(--border)}
+  .cell.on{background:var(--primary);color:white;border-color:var(--primary)}
+  .cell.star{background:var(--secondary);color:#5C3A00;border-color:var(--secondary)}
+
+  .ball{width:46px;height:46px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font);font-size:16px;font-weight:900}
+  .ball-p{background:var(--primary);color:white}
+  .ball-s{background:var(--secondary);color:#5C3A00}
+  .ball-a{background:var(--accent);color:white}
+  .ball-w{background:var(--warm);color:white}
+  .ball-n{background:#F0F0F0;color:#555}
+
+  .field-label{font-family:var(--font);font-size:13px;font-weight:700;color:var(--text);margin-bottom:6px}
+  .input-field{width:100%;border:2px solid var(--border);border-radius:14px;padding:12px 16px;font-family:var(--font);font-size:15px;font-weight:600;color:var(--text);background:var(--bg);outline:none;appearance:none;margin-bottom:12px}
+  .input-field.active{border-color:var(--primary)}
+
+  .footer{background:var(--text);padding:50px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  .footer-logo{font-family:var(--font);font-size:36px;font-weight:900;color:white;letter-spacing:-1px}
+  .footer-logo span{color:var(--secondary)}
+  .footer-info{font-family:var(--font);font-size:13px;font-weight:600;color:rgba(255,255,255,0.35);text-align:right}
+
+  @media(max-width:700px){
+    .hero,.section,.footer{padding:40px 24px}
+    .logo-display{font-size:54px}
+    .typo-grid,.comp-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div>
+    <div class="brand-tag">✦ Charte — Bleu Ciel Doux</div>
+    <div class="logo-display">Quin<span>e</span>o</div>
+    <div class="logo-tagline">Organisation de lotos pour les associations</div>
+    <p class="hero-desc">Quineo — la plateforme de confiance pour vos lotos associatifs. Un design aérien, clair et rassurant qui met tout le monde à l'aise.</p>
+  </div>
+  <div class="hero-right">
+    <div class="logo-card" style="background:var(--primary);">
+      <div class="logo-card-text" style="color:white;">Quin<span style="color:var(--secondary);">e</span>o</div>
+    </div>
+    <div class="logo-card" style="background:var(--text);">
+      <div class="logo-card-text" style="color:white;">Quin<span style="color:var(--secondary);">e</span>o</div>
+    </div>
+    <div class="logo-card" style="background:var(--primary-light);">
+      <div class="logo-card-text" style="color:var(--primary);">Quin<span style="color:var(--secondary);">e</span>o</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">01 — Identité chromatique</div>
+  <div class="section-title">Palette de couleurs</div>
+  <div class="palette-grid">
+    <div class="swatch"><div class="swatch-color" style="background:#4A90B8;"></div><div class="swatch-info"><div class="swatch-name">Bleu Ciel Doux</div><div class="swatch-role">Couleur principale</div><div class="swatch-hex">#4A90B8</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FFD84D;"></div><div class="swatch-info"><div class="swatch-name">Jaune Soleil</div><div class="swatch-role">Couleur secondaire</div><div class="swatch-hex">#FFD84D</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#2BBFA4;"></div><div class="swatch-info"><div class="swatch-name">Turquoise Vif</div><div class="swatch-role">Accentuation</div><div class="swatch-hex">#2BBFA4</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F97B4B;"></div><div class="swatch-info"><div class="swatch-name">Orange Festif</div><div class="swatch-role">Touche chaleureuse</div><div class="swatch-hex">#F97B4B</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#FFFFFF;border:1.5px solid #C8DFF0;"></div><div class="swatch-info"><div class="swatch-name">Blanc Pur</div><div class="swatch-role">Fond principal</div><div class="swatch-hex">#FFFFFF</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#F4FAFD;"></div><div class="swatch-info"><div class="swatch-name">Bleu Givre</div><div class="swatch-role">Fond secondaire</div><div class="swatch-hex">#F4FAFD</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#E5F3FA;"></div><div class="swatch-info"><div class="swatch-name">Ciel Pâle</div><div class="swatch-role">Fond teinté doux</div><div class="swatch-hex">#E5F3FA</div></div></div>
+    <div class="swatch"><div class="swatch-color" style="background:#0D1E2C;"></div><div class="swatch-info"><div class="swatch-name">Marine Nuit</div><div class="swatch-role">Texte / fond sombre</div><div class="swatch-hex">#0D1E2C</div></div></div>
+  </div>
+  <div style="margin-top:36px;padding:24px;background:var(--bg);border-radius:18px;border:1.5px solid var(--border);">
+    <div style="font-family:var(--font);font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-soft);margin-bottom:16px;">Boules de loto — usage couleur</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center;">
+      <div class="ball ball-p">14</div>
+      <div class="ball ball-s">27</div>
+      <div class="ball ball-a">63</div>
+      <div class="ball ball-w">88</div>
+      <div class="ball ball-n">45</div>
+      <div class="ball ball-p">7</div>
+      <div class="ball ball-s">31</div>
+      <div class="ball ball-a">52</div>
+      <div class="ball ball-w">19</div>
+      <div class="ball ball-p">76</div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">02 — Identité typographique</div>
+  <div class="section-title">Police & Hiérarchie</div>
+  <div style="margin-bottom:30px;padding:30px;background:var(--bg);border-radius:18px;border:1.5px solid var(--border);">
+    <div class="font-badge">✦ Nunito — Police principale</div>
+    <div class="alpha">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div>
+    <div style="font-family:var(--font);font-size:20px;font-weight:600;color:var(--text-muted);letter-spacing:2px;">abcdefghijklmnopqrstuvwxyz 0123456789</div>
+    <div style="font-family:var(--font);font-size:14px;font-weight:600;color:var(--text-soft);margin-top:12px;">Ronde, chaleureuse, lisible — parfaite pour une identité festive et accessible.</div>
+  </div>
+  <div class="typo-grid">
+    <div class="typo-card"><div class="typo-label">Titre principal (H1)</div><div class="h1">Loto<br>Solidaire</div><div class="typo-spec">Nunito 900 · 52px</div></div>
+    <div class="typo-card"><div class="typo-label">Titre section (H2)</div><div class="h2">Rejoignez<br>l'événement !</div><div class="typo-spec">Nunito 800 · 34px</div></div>
+    <div class="typo-card"><div class="typo-label">Sous-titre (H3)</div><div class="h3">Grande soirée de loto<br>au profit de l'école</div><div class="typo-spec">Nunito 700 · 22px</div></div>
+    <div class="typo-card"><div class="typo-label">Texte courant</div><div class="body-txt">Quineo accompagne les associations dans l'organisation de leurs lotos. Simple, rapide, et convivial — créez votre événement en quelques clics.</div><div class="typo-spec">Nunito Sans 400 · 15px</div></div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="section-label">03 — Composants UI</div>
+  <div class="section-title">Boutons, badges & éléments</div>
+  <div class="comp-grid">
+
+    <div class="comp-card">
+      <div class="comp-title">Boutons</div>
+      <div class="btn-group">
+        <div class="btn btn-p">Créer un loto</div>
+        <div class="btn btn-s">Découvrir</div>
+        <div class="btn btn-o">En savoir plus</div>
+        <div class="btn btn-a">Rejoindre</div>
+        <div class="btn btn-w btn-sm">Nouveau</div>
+        <div class="btn btn-g">Annuler</div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-title">Badges & étiquettes</div>
+      <div class="badge-group">
+        <span class="badge b1">✦ Événement</span>
+        <span class="badge b2">★ Populaire</span>
+        <span class="badge b3">✓ Confirmé</span>
+        <span class="badge b4">◆ Premium</span>
+        <span class="badge b5">Gratuit</span>
+        <span class="badge b1">Nouveau</span>
+        <span class="badge b3">Disponible</span>
+        <span class="badge b2">Ce soir</span>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-title">Carte événement</div>
+      <div class="event-card">
+        <div class="event-header">
+          <div class="event-date">Samedi 19 Avril 2025</div>
+          <div class="event-title">Grand Loto de<br>l'Amicale Sportive</div>
+        </div>
+        <div class="event-body">
+          <div class="event-meta">
+            <div class="meta-item"><div class="meta-icon">📍</div>Salle des fêtes</div>
+            <div class="meta-item"><div class="meta-icon">🕖</div>19h00</div>
+            <div class="meta-item"><div class="meta-icon">👥</div>120 places</div>
+          </div>
+          <div class="price-row">
+            <div class="price-lbl">Carton unique</div>
+            <div class="price-val">3 €</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-title">Grille de loto</div>
+      <div class="ticket">
+        <div class="ticket-top"><div class="ticket-title">Grille N°</div><div class="ticket-num">042</div></div>
+        <div class="ticket-grid">
+          <div class="cell">4</div><div class="cell on">17</div><div class="cell">28</div><div class="cell on">35</div><div class="cell">51</div>
+          <div class="cell on">6</div><div class="cell">22</div><div class="cell star">★</div><div class="cell">43</div><div class="cell on">68</div>
+          <div class="cell">11</div><div class="cell on">24</div><div class="cell">37</div><div class="cell">59</div><div class="cell on">72</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-title">Formulaire</div>
+      <div class="field-label">Nom de l'association</div>
+      <input class="input-field active" type="text" value="Amicale Sportive du Val">
+      <div class="field-label">Date de l'événement</div>
+      <input class="input-field" type="text" placeholder="JJ/MM/AAAA">
+      <div class="field-label">Nombre de cartons</div>
+      <input class="input-field" type="text" placeholder="Ex : 200 cartons">
+      <div class="btn btn-p" style="text-align:center;width:100%;margin-top:4px;">Créer l'événement</div>
+    </div>
+
+    <div class="comp-card">
+      <div class="comp-title">Personnalité de marque</div>
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <div style="background:var(--primary-light);border-radius:12px;padding:10px 14px;font-family:var(--font);font-size:13px;font-weight:800;color:var(--primary-dark);">✦ Clair & Rassurant</div>
+        <div style="background:var(--secondary-light);border-radius:12px;padding:10px 14px;font-family:var(--font);font-size:13px;font-weight:800;color:#7A5000;">✦ Accessible & Festif</div>
+        <div style="background:var(--accent-light);border-radius:12px;padding:10px 14px;font-family:var(--font);font-size:13px;font-weight:800;color:#0F6E56;">✦ Solidaire & Local</div>
+        <div style="background:#FFF0EA;border-radius:12px;padding:10px 14px;font-family:var(--font);font-size:13px;font-weight:800;color:#B84000;">✦ Moderne & Convivial</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer class="footer">
+  <div>
+    <div class="footer-logo">Quin<span>e</span>o</div>
+    <div style="font-family:var(--font);font-size:13px;font-weight:600;color:rgba(255,255,255,0.35);margin-top:6px;">Organisation de lotos pour les associations</div>
+  </div>
+  <div class="footer-info">Charte Graphique — Bleu Ciel Doux<br>Version 1.0 · Usage interne</div>
+</footer>
+
+</body>
+</html>

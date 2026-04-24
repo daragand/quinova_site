@@ -1,0 +1,62 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cookies — Quinova</title><link rel="stylesheet" href="shared.css"><style>
+.ck-tbl{width:100%;max-width:720px;border-collapse:separate;border-spacing:0;border-radius:14px;overflow:hidden;border:1.5px solid var(--q-border);margin:14px 0 24px;font-size:14px}
+.ck-tbl th,.ck-tbl td{padding:12px 14px;text-align:left;border-bottom:1.5px solid var(--q-border)}
+.ck-tbl th{background:var(--q-bg-2);font-family:var(--q-font-d);font-weight:800;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--q-fg-2)}
+.ck-tbl tr:last-child td{border-bottom:none}
+.ck-tbl td:first-child{font-family:var(--q-font-d);font-weight:800;color:var(--q-navy)}
+.ck-row{max-width:720px;background:#fff;border:1.5px solid var(--q-border);border-radius:16px;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:12px}
+.ck-row .info h3{font-size:17px;margin-bottom:4px}
+.ck-row .info p{font-size:13.5px;color:var(--q-fg-2);margin:0}
+.tog{width:50px;height:28px;border-radius:30px;background:var(--q-border);position:relative;cursor:pointer;flex:0 0 auto;transition:all .2s var(--q-ease)}
+.tog::after{content:"";position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,0.2);transition:all .2s var(--q-ease)}
+.tog.on{background:var(--q-blue)}
+.tog.on::after{left:25px}
+.tog.locked{background:var(--q-blue-d);cursor:not-allowed}
+.tog.locked::after{left:25px}
+</style></head><body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="logo on-light" style="font-size:28px">QUIN<span class="dot">O</span>VA</a><div class="nav-links"><a href="index.html#fonctionnalites">Fonctionnalités</a><a href="index.html#soutenir">Soutenir</a><a href="plan-du-site.html">Plan du site</a></div><div class="nav-cta"><a href="https://app.quinova.fr" class="btn btn-p btn-sm">Lancer un loto</a></div></div></nav>
+
+<main class="page">
+  <div class="eyebrow">Légal · RGPD</div>
+  <h1>Gestion des cookies</h1>
+  <p style="margin-top:10px">Quinova utilise uniquement les cookies strictement nécessaires au bon fonctionnement du service. <b>Aucun cookie publicitaire, aucun traceur tiers.</b></p>
+
+  <h2>Vos préférences</h2>
+
+  <div class="ck-row">
+    <div class="info"><h3>Cookies essentiels</h3><p>Session, connexion, sécurité. Indispensables — ne peuvent pas être désactivés.</p></div>
+    <div class="tog locked" aria-label="Toujours actif"></div>
+  </div>
+  <div class="ck-row">
+    <div class="info"><h3>Cookies de préférences</h3><p>Mémorisent votre langue, votre thème, votre dernier loto consulté.</p></div>
+    <div class="tog on" onclick="this.classList.toggle('on')"></div>
+  </div>
+  <div class="ck-row">
+    <div class="info"><h3>Statistiques anonymes</h3><p>Nous aident à comprendre l'usage du service (sans identification individuelle).</p></div>
+    <div class="tog" onclick="this.classList.toggle('on')"></div>
+  </div>
+  <div class="ck-row">
+    <div class="info"><h3>Publicité / traçage tiers</h3><p>Quinova n'en utilise pas. Verrouillé sur « désactivé ».</p></div>
+    <div class="tog" style="opacity:0.4;cursor:not-allowed"></div>
+  </div>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+    <button class="btn btn-p btn-sm">Enregistrer mes préférences</button>
+    <button class="btn btn-o btn-sm">Tout accepter</button>
+    <button class="btn btn-g btn-sm">Tout refuser (sauf essentiels)</button>
+  </div>
+
+  <h2>Détail des cookies déposés</h2>
+  <table class="ck-tbl">
+    <tr><th>Nom</th><th>Finalité</th><th>Durée</th></tr>
+    <tr><td>quinova_session</td><td>Session utilisateur</td><td>Session</td></tr>
+    <tr><td>quinova_csrf</td><td>Protection anti-CSRF</td><td>Session</td></tr>
+    <tr><td>quinova_prefs</td><td>Préférences d'affichage</td><td>12 mois</td></tr>
+    <tr><td>quinova:ck</td><td>Mémorisation du bandeau cookie</td><td>12 mois</td></tr>
+  </table>
+
+  <p style="font-size:13px;color:var(--q-fg-3)">Dernière mise à jour&nbsp;: avril 2026.</p>
+</main>
+
+<footer class="footer"><div class="footer-inner"><div><div class="logo on-dark" style="font-size:30px;margin-bottom:12px">QUIN<span class="dot">O</span>VA</div></div><div><h4>Produit</h4><ul><li><a href="index.html#fonctionnalites">Fonctionnalités</a></li></ul></div><div><h4>Soutenir</h4><ul><li><a href="index.html#soutenir">Faire un don</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgu.html">CGU</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="cookies.html">Cookies</a></li><li><a href="rgpd.html">RGPD</a></li></ul></div><div><h4>Site</h4><ul><li><a href="plan-du-site.html">Plan du site</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="footer-bottom"><div>© 2025 Quinova</div><div>quinova.fr</div></div></footer>
+</body></html>

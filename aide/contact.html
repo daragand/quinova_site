@@ -1,0 +1,51 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Contact — Quinova</title><link rel="stylesheet" href="shared.css"><style>
+.contact{max-width:1100px;margin:0 auto;padding:60px 28px 80px;display:grid;grid-template-columns:1fr 1.2fr;gap:44px}
+.contact-info{padding-top:10px}
+.contact-info .card{background:#fff;border:1.5px solid var(--q-border);border-radius:18px;padding:22px;margin-bottom:14px;display:flex;gap:14px;align-items:flex-start}
+.contact-info .card .ic{width:42px;height:42px;border-radius:12px;background:var(--q-blue-l);color:var(--q-blue-d);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.contact-info .card h3{font-size:16px;margin-bottom:4px}
+.contact-info .card p{font-size:14px;margin:0}
+.form-big{background:var(--q-bg-2);border-radius:22px;padding:34px;border:1.5px solid var(--q-border)}
+.form-big label{display:block;font-family:var(--q-font-d);font-weight:700;font-size:13px;margin-bottom:6px;color:var(--q-navy)}
+.form-big .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-big input,.form-big select,.form-big textarea{width:100%;font-family:var(--q-font-b);font-size:14px;padding:12px 14px;border-radius:12px;border:1.5px solid var(--q-border);background:#fff;margin-bottom:14px;color:var(--q-navy)}
+.form-big textarea{min-height:140px;resize:vertical}
+.form-big input:focus,.form-big select:focus,.form-big textarea:focus{outline:none;border-color:var(--q-blue);box-shadow:0 0 0 4px rgba(74,144,184,0.22)}
+.rgpd-box{font-size:12.5px;color:var(--q-fg-2);background:#fff;border:1.5px dashed var(--q-border);border-radius:12px;padding:12px 14px;margin:4px 0 14px;line-height:1.5}
+@media(max-width:900px){.contact{grid-template-columns:1fr}.form-big .row2{grid-template-columns:1fr}}
+</style></head><body>
+<nav class="nav"><div class="nav-inner"><a href="index.html" class="logo on-light" style="font-size:28px">QUIN<span class="dot">O</span>VA</a><div class="nav-links"><a href="index.html#fonctionnalites">Fonctionnalités</a><a href="index.html#soutenir">Soutenir</a><a href="plan-du-site.html">Plan du site</a></div><div class="nav-cta"><a href="https://app.quinova.fr" class="btn btn-p btn-sm">Lancer un loto</a></div></div></nav>
+
+<section class="contact">
+  <div class="contact-info">
+    <div class="eyebrow">Contact</div>
+    <h1 style="font-size:44px">Une question ?<br>Écrivez-nous.</h1>
+    <p style="margin:14px 0 26px;font-size:16px">Nous répondons sous 48 heures ouvrées. Pour l'exercice des droits RGPD, utilisez la <a href="rgpd.html">page dédiée</a>.</p>
+
+    <div class="card"><div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><polyline points="22,6 12,13 2,6"/></svg></div><div><h3>E-mail général</h3><p><a href="mailto:contact@quinova.fr">contact@quinova.fr</a></p></div></div>
+    <div class="card"><div class="ic" style="background:#FFF0EA;color:#B84000"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-8-4.5-8-11a8 8 0 1 1 16 0c0 6.5-8 11-8 11z"/><circle cx="12" cy="11" r="3"/></svg></div><div><h3>Adresse</h3><p>Montigny-lès-Cormeilles (95)<br>France</p></div></div>
+    <div class="card"><div class="ic" style="background:#FFF7D6;color:#7A5000"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><div><h3>DPO / RGPD</h3><p><a href="mailto:dpo@quinova.fr">dpo@quinova.fr</a></p></div></div>
+  </div>
+
+  <form class="form-big" onsubmit="event.preventDefault();this.innerHTML='<div style=&quot;text-align:center;padding:50px 0&quot;><div style=&quot;font-size:56px&quot;>✓</div><h2 style=&quot;margin-top:10px&quot;>Message envoyé !</h2><p style=&quot;color:var(--q-fg-2);margin-top:10px&quot;>Nous revenons vers vous sous 48 heures ouvrées.</p></div>'">
+    <label>Sujet</label>
+    <select><option>Question générale</option><option>Aide à l'utilisation</option><option>Signaler un bug</option><option>Partenariat / presse</option><option>Autre</option></select>
+    <div class="row2">
+      <div><label>Prénom</label><input type="text" placeholder="Marie" required></div>
+      <div><label>Nom</label><input type="text" placeholder="Dupont" required></div>
+    </div>
+    <label>E-mail</label>
+    <input type="email" placeholder="marie.dupont@exemple.fr" required>
+    <label>Association (facultatif)</label>
+    <input type="text" placeholder="Amicale du Val · APE École G. Braque…">
+    <label>Votre message</label>
+    <textarea placeholder="Bonjour, je souhaite organiser un loto pour…" required></textarea>
+    <div class="rgpd-box">
+      🔒 En envoyant ce formulaire, vous acceptez que vos données soient utilisées uniquement pour répondre à votre demande — conformément à notre <a href="confidentialite.html">politique de confidentialité</a>. Vous pouvez à tout moment exercer vos <a href="rgpd.html">droits RGPD</a>.
+    </div>
+    <button class="btn btn-p btn-lg">Envoyer le message</button>
+  </form>
+</section>
+
+<footer class="footer"><div class="footer-inner"><div><div class="logo on-dark" style="font-size:30px;margin-bottom:12px">QUIN<span class="dot">O</span>VA</div></div><div><h4>Produit</h4><ul><li><a href="index.html#fonctionnalites">Fonctionnalités</a></li></ul></div><div><h4>Soutenir</h4><ul><li><a href="index.html#soutenir">Faire un don</a></li></ul></div><div><h4>Légal</h4><ul><li><a href="mentions-legales.html">Mentions légales</a></li><li><a href="cgu.html">CGU</a></li><li><a href="confidentialite.html">Confidentialité</a></li><li><a href="cookies.html">Cookies</a></li><li><a href="rgpd.html">RGPD</a></li></ul></div><div><h4>Site</h4><ul><li><a href="plan-du-site.html">Plan du site</a></li><li><a href="contact.html">Contact</a></li></ul></div></div><div class="footer-bottom"><div>© 2025 Quinova</div><div>quinova.fr</div></div></footer>
+</body></html>
