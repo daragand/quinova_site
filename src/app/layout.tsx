@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import ScrollToTop from '@/components/ScrollToTop';
+import ScrollReveal from '@/components/ScrollReveal';
 
 export const metadata: Metadata = {
   title: 'Quinova — Gérez vos lotos associatifs en toute simplicité',
@@ -21,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         {children}
         <ScrollToTop />
+        <ScrollReveal />
       </body>
     </html>
   );

@@ -62,10 +62,11 @@ export default function OrganiserUnLotoPage() {
         </ul>
 
         <div className={s['guide-tip']}>
-          <b>Bon à savoir</b>
-          <br />
-          Si vous organisez un événement de grande ampleur ou si vous avez un doute sur vos statuts
-          associatifs, rapprochez-vous de votre mairie ou d'un conseiller juridique.
+          <div className={s['tip-label']}><span>Bon à savoir</span></div>
+          <div className={s['tip-body']}>
+            Si vous organisez un événement de grande ampleur ou si vous avez un doute sur vos statuts
+            associatifs, rapprochez-vous de votre mairie ou d'un conseiller juridique.
+          </div>
         </div>
       </section>
 
@@ -123,10 +124,11 @@ export default function OrganiserUnLotoPage() {
         </ul>
 
         <div className={s['guide-tip']}>
-          <b>Conseil</b>
-          <br />
-          Organisez un briefing de 30 minutes avec tous vos bénévoles la veille ou 1 h avant
-          l'ouverture. Un rôle clair pour chacun évite 90 % des problèmes le jour J.
+          <div className={s['tip-label']}><span>Conseil</span></div>
+          <div className={s['tip-body']}>
+            Organisez un briefing de 30 minutes avec tous vos bénévoles la veille ou 1 h avant
+            l'ouverture. Un rôle clair pour chacun évite 90 % des problèmes le jour J.
+          </div>
         </div>
       </section>
 
@@ -168,18 +170,20 @@ export default function OrganiserUnLotoPage() {
         </ul>
 
         <div className={s['guide-tip']}>
-          <b>Règle d'or</b>
-          <br />
-          Le lot du carton plein doit faire envie à <em>tout le monde dans la salle</em>. Un lot
-          principal décevant fait partir les gens avant la fin. Investissez sur ce lot — c'est
-          lui qui "tire" toute la soirée.
+          <div className={s['tip-label']}><span>Règle d'or</span></div>
+          <div className={s['tip-body']}>
+            Le lot du carton plein doit faire envie à <em>tout le monde dans la salle</em>. Un lot
+            principal décevant fait partir les gens avant la fin. Investissez sur ce lot — c'est
+            lui qui "tire" toute la soirée.
+          </div>
         </div>
 
         <div className={s['guide-warn']}>
-          <b>Attention — lots interdits</b>
-          <br />
-          Remettre de l'argent liquide en guise de lot est interdit dans le cadre légal des lotos
-          associatifs. Préférez les bons d'achat ou les chèques cadeaux.
+          <div className={s['warn-label']}><span>Attention</span></div>
+          <div className={s['warn-body']}>
+            <b>Lots interdits —</b> Remettre de l'argent liquide en guise de lot est interdit dans
+            le cadre légal des lotos associatifs. Préférez les bons d'achat ou les chèques cadeaux.
+          </div>
         </div>
       </section>
 
@@ -208,11 +212,12 @@ export default function OrganiserUnLotoPage() {
         </ul>
 
         <div className={s['guide-tip']}>
-          <b>Avec Quinova</b>
-          <br />
-          La génération des cartons est entièrement automatique — aucun doublon possible, fichier
-          PDF prêt à imprimer, numérotation incluse. Vous pouvez aussi activer la vente en ligne
-          avant l'événement.
+          <div className={s['tip-label']}><span>Avec Quinova</span></div>
+          <div className={s['tip-body']}>
+            La génération des cartons est entièrement automatique — aucun doublon possible, fichier
+            PDF prêt à imprimer, numérotation incluse. Vous pouvez aussi activer la vente en ligne
+            avant l'événement.
+          </div>
         </div>
       </section>
 

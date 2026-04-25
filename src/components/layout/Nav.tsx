@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Menu, X } from 'lucide-react';
 
@@ -12,10 +12,17 @@ const NAV_LINKS = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
     <>
-      <nav className="nav" role="navigation" aria-label="Navigation principale">
+      <nav className={`nav${scrolled ? ' scrolled' : ''}`} role="navigation" aria-label="Navigation principale">
         <div className="nav-inner">
           <Link href="/" className="logo on-light" style={{ fontSize: 28 }} aria-label="Quinova — accueil">
             QUIN<span className="dot">O</span>VA

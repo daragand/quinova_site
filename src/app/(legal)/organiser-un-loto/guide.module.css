@@ -17,9 +17,74 @@
 .guide-section ul, .guide-section ol { margin:8px 0 14px 20px;display:flex;flex-direction:column;gap:6px }
 .guide-section li { color:var(--q-fg-2);font-size:15px;line-height:1.6 }
 
-.guide-tip, .guide-warn { border-radius:12px;padding:14px 18px;font-size:14px;line-height:1.6;margin:18px 0 }
-.guide-tip { background:var(--q-blue-l);border-left:4px solid var(--q-blue);color:var(--q-navy) }
-.guide-warn { background:#FFF4E5;border-left:4px solid var(--q-orange);color:var(--q-navy) }
+/* ── Tip / Warn — ticket-stub style ─────────────────── */
+.guide-tip,
+.guide-warn {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  border-radius: 14px;
+  overflow: hidden;
+  margin: 22px 0;
+  box-shadow: 0 4px 20px rgba(13,30,44,.08), 0 1px 4px rgba(13,30,44,.05);
+}
+
+.tip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 8px;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px) 0 0 / 8px 8px,
+    linear-gradient(160deg, var(--q-blue) 0%, var(--q-blue-d) 100%);
+  border-right: 2px dashed rgba(255,255,255,.30);
+}
+
+.warn-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 8px;
+  background:
+    radial-gradient(circle, rgba(255,255,255,.14) 1px, transparent 1px) 0 0 / 8px 8px,
+    linear-gradient(160deg, #FF9060 0%, var(--q-orange) 100%);
+  border-right: 2px dashed rgba(255,255,255,.30);
+}
+
+.tip-label span,
+.warn-label span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--q-font-d);
+  font-weight: 900;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.tip-body {
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--q-navy);
+  background: var(--q-blue-l);
+}
+
+.warn-body {
+  padding: 16px 20px;
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--q-navy);
+  background: #FFF4EE;
+}
+
+.tip-body b,
+.warn-body b {
+  font-family: var(--q-font-d);
+  font-weight: 800;
+  color: var(--q-navy);
+}
 
 .guide-steps { list-style:decimal;margin:10px 0 14px 22px;display:flex;flex-direction:column;gap:8px }
 .guide-steps li { color:var(--q-fg-2);font-size:15px;line-height:1.6;padding-left:4px }
