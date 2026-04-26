@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyTurnstileToken } from '@/lib/turnstile';
+import { sendMail } from '@/lib/mailer';
 
 const ALLOWED_ORIGINS = new Set([
   'https://quinova.fr',
@@ -61,7 +62,17 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'invalid_captcha' }, { status: 400 });
   }
 
-  // TODO: envoyer un e-mail à dpo@quinova.fr avec body.right / body.email / body.details
+  await sendMail({
+    to: 'dpo@quinova.fr',
+    subject: `[RGPD] ${right} — ${email}`,
+    text: [
+      `Droit demandé : ${right}`,
+      `E-mail : ${email}`,
+      details ? `\nPrécisions :\n${details}` : null,
+    ]
+      .filter((l) => l !== null)
+      .join('\n'),
+  });
 
   return NextResponse.json({ ok: true });
 }

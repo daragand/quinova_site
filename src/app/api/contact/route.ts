@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyTurnstileToken } from '@/lib/turnstile';
+import { sendMail } from '@/lib/mailer';
 
 const ALLOWED_ORIGINS = new Set([
   'https://quinova.fr',
@@ -70,7 +71,20 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'invalid_captcha' }, { status: 400 });
   }
 
-  // TODO: envoyer un e-mail à contact@quinova.fr avec les champs du formulaire
+  await sendMail({
+    to: 'contact@quinova.fr',
+    subject: `[Contact] ${subject} — ${firstName} ${lastName}`,
+    text: [
+      `Sujet : ${subject}`,
+      `Nom : ${firstName} ${lastName}`,
+      `E-mail : ${email}`,
+      assoc ? `Association : ${assoc}` : null,
+      '',
+      message,
+    ]
+      .filter((l) => l !== null)
+      .join('\n'),
+  });
 
   return NextResponse.json({ ok: true });
 }
